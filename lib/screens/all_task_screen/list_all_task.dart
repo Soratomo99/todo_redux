@@ -20,6 +20,7 @@ class ListAllTask extends StatelessWidget {
             itemCount: tasks.length,
             itemBuilder: (context, index) {
               return ListTile(
+                onLongPress: () => viewModel.deleteTask(tasks[index]),
                 title: Text(
                   tasks[index].detail,
                   style: TextStyle(

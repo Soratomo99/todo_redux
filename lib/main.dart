@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
     return StoreProvider(
       store: store,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: StoreConnector<AppState, ViewModel>(
             converter: (Store<AppState> store) => ViewModel.create(store),
             onInitialBuild: (viewModel) {},

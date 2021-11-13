@@ -11,19 +11,20 @@ class ButtonAddTask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String newTaskDetail = "null";
     return FloatingActionButton(
       onPressed: () => showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (BuildContext context) {
             return StoreConnector<AppState, ViewModel>(
                 converter: (Store<AppState> store) => ViewModel.create(store),
                 onInitialBuild: (viewModel) {},
                 builder: (context, viewModel) {
-                  String newTaskDetail = "null";
                   return SingleChildScrollView(
                     child: Container(
                       padding: EdgeInsets.all(20),
-                      height: 300,
+                      // height: 300,
                       color: Colors.white,
                       child: Column(
                         children: [
